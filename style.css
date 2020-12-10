@@ -1,0 +1,21 @@
+#container {
+    display: flex;
+    padding-left: auto;
+    text-align: center;
+}
+
+#align {
+    margin: auto;
+}
+
+#sketch {
+    float: left;
+}
+
+#sliders {
+    float: left;
+    margin: 10 10;
+}
+input {
+    display: block;
+}
