@@ -208,7 +208,7 @@ vector<long long> dualPendPRNG(vector<int> &key, long long mod, int F = 1)
 int main()
 {
     vector<int> key = {0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1};
-    vector<long long> res = dualPendPRNG(key, 100, 50);
+    vector<long long> res = dualPendPRNG(key, 100, 10);
     print(res);
 
     // long double X = fmod((long double)1703.48, (long double)1);
