@@ -208,11 +208,15 @@ vector<long long> dualPendPRNG(vector<int> &key, long long mod, int F = 1)
 int main()
 {
     vector<int> key = {0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1};
-    vector<long long> res = dualPendPRNG(key, 100, 10);
-    print(res);
+    int mod, num;
 
-    // long double X = fmod((long double)1703.48, (long double)1);
-    // cout << X << endl;
+    cout << "Enter the number of random numbers to output: ";
+    cin >> num;
+    cout << "Enter the maximum range of your random numbers: ";
+    cin >> mod;
+
+    vector<long long> res = dualPendPRNG(key, mod, num - 1);
+    print(res);
 
     return 0;
 }
