@@ -140,7 +140,7 @@ long long concat(int a, int b)
     return out;
 }
 
-vector<long long> dualPendPRNG(vector<int> &key, long long mod, int F = 1)
+vector<long long> dualPendPRNG(vector<int> &key, long long start, long long mod, int F = 1)
 {
     vector<long double> res = initialize(key);
     long double l1, l2, m1, m2, t1, t2, r;
@@ -196,7 +196,7 @@ vector<long long> dualPendPRNG(vector<int> &key, long long mod, int F = 1)
             {
                 temp += mod;
             }
-            S.push_back(temp);
+            S.push_back(start + temp);
             // print(temp);
             i++;
             j++;
@@ -208,14 +208,14 @@ vector<long long> dualPendPRNG(vector<int> &key, long long mod, int F = 1)
 int main()
 {
     vector<int> key = {0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1};
-    int mod, num;
+    int low, high, num;
 
     cout << "Enter the number of random numbers to output: ";
     cin >> num;
-    cout << "Enter the maximum range of your random numbers: ";
-    cin >> mod;
+    cout << "Enter space seperated values representing min and max for your range: ";
+    cin >> low >> high;
 
-    vector<long long> res = dualPendPRNG(key, mod, num - 1);
+    vector<long long> res = dualPendPRNG(key, low, high-low+1, num - 1);
     print(res);
 
     return 0;
